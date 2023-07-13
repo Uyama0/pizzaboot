@@ -1,11 +1,11 @@
-import NavBar from "./components/NavBar";
 import "./styles/global.css";
+
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <div>hi</div>
+      <Layout />
     </>
   );
 }
