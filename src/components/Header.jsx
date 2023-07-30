@@ -10,15 +10,17 @@ function Header() {
 
   const toggleMenu = () => {
     setOpen(!isOpen);
+    setCartOpen(false);
   };
 
   const cartToggle = () => {
     setCartOpen(!cartIsOpen);
+    setOpen(false);
   };
 
   return (
     <header className="w-full bg-slate-200">
-      <div className="mx-auto max-w-5xl ">
+      <div className="mx-auto max-w-5xl">
         <nav className="flex items-center gap-3 text-base">
           <h2 className="ml-4 md:ml-0 font-semibold text-lg">Cabo</h2>
           <div className="flex-1"></div>
@@ -27,7 +29,7 @@ function Header() {
               Menu
             </Link>
             <Link to="/home">About</Link>
-            <div>Contact</div>
+            <Link to="/home">Contact</Link>
           </div>
           <div className="flex-1"></div>
           <div className="gap-6 inline-flex p-2 mr-4 md:mr-0">
@@ -46,7 +48,7 @@ function Header() {
       </div>
 
       <div
-        className={`fixed w-full h-full flex justify-center items-center text-[4rem] tracking-wide bg-gray-700 text-white overflow-hidden origin-left duration-500 ${
+        className={`fixed w-full h-full flex justify-center overflow-hidden items-center text-[4rem] tracking-wide bg-gray-700 text-white overflow-hidden origin-left duration-500 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
