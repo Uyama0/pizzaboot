@@ -22,7 +22,7 @@ function Slider() {
           BUTTON HERE
         </button>
       </div>
-      <div className="w-full h-1/2 lg:w-1/2 relative lg:h-full">
+      <div className="w-full h-1/2 lg:w-1/2 relative lg:h-full -z-10">
         <img
           src={sliderData[currentSlide.image].image}
           alt="slide here"

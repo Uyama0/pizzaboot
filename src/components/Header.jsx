@@ -48,7 +48,7 @@ function Header() {
       </div>
 
       <div
-        className={`fixed w-full h-full flex justify-center overflow-hidden items-center text-[4rem] tracking-wide bg-gray-700 text-white overflow-hidden origin-left duration-500 ${
+        className={`fixed w-full h-full flex justify-center items-center text-[4rem] tracking-wide bg-gray-700 text-white overflow-hidden origin-left duration-500 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
