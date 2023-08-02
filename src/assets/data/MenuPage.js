@@ -1,4 +1,4 @@
-import pizza from "../img/home.jpg";
+import pizza from "../img/pizza.png";
 
 // type Product = {
 //   id: number;

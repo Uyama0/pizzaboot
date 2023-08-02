@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <header className="w-full bg-slate-200">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         <nav className="flex items-center gap-3 text-base">
           <h2 className="ml-4 md:ml-0 font-semibold text-lg">Cabo</h2>
           <div className="flex-1"></div>
