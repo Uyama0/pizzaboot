@@ -19,8 +19,8 @@ function Header() {
   };
 
   return (
-    <header className="w-full bg-slate-200">
-      <div className="mx-auto max-w-6xl">
+    <header className="w-full bg-slate-200 sticky top-0">
+      <div className="mx-auto max-w-6xl ">
         <nav className="flex items-center gap-3 text-base">
           <h2 className="ml-4 md:ml-0 font-semibold text-lg">Cabo</h2>
           <div className="flex-1"></div>
@@ -75,7 +75,11 @@ function Header() {
         className={`fixed h-full w-[60%] md:w-1/4 bg-slate-600 flex origin-right duration-500 end-0 ${
           cartIsOpen ? "translate-x-0" : "translate-x-full"
         }`}
-      ></div>
+      >
+        <div className="text-3xl w-full flex text-white flex justify-center p-4 underline uppercase">
+          <div>s</div>
+        </div>
+      </div>
     </header>
   );
 }
