@@ -25,10 +25,8 @@ function Header() {
           <h2 className="ml-4 md:ml-0 font-semibold text-lg">Cabo</h2>
           <div className="flex-1"></div>
           <div className="gap-6 p-2 hidden md:flex ">
-            <Link to="/menu" className="Links">
-              Menu
-            </Link>
-            <Link to="/home">About</Link>
+            <Link to="/home">Home</Link>
+            <Link to="/about">About</Link>
             <Link to="/home">Contact</Link>
           </div>
           <div className="flex-1"></div>
@@ -76,9 +74,7 @@ function Header() {
           cartIsOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="text-3xl w-full flex text-white flex justify-center p-4 underline uppercase">
-          <div>s</div>
-        </div>
+        <div className="text-3xl w-full flex text-white justify-center p-4 underline uppercase"></div>
       </div>
     </header>
   );

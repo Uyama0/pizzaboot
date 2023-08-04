@@ -3,10 +3,10 @@ import Slider from "../components/Slider.jsx";
 
 function Home() {
   return (
-    <main>
+    <>
       <Slider />
       <MenuList />
-    </main>
+    </>
   );
 }
 

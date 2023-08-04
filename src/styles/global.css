@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 /* .Links:hover {
   color: r;
