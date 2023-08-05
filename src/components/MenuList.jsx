@@ -9,7 +9,7 @@ function MenuList() {
       <div className="flex flex-wrap text-red-600 ">
         {pizzas.map((item) => (
           <Link
-            to={`/product/${item.id}`}
+            to={`/home/${item.id}`}
             className="w-full h-[60vh]  sm:w-1/2 lg:w-1/3 p-4 border border-red-200 "
             key={item.id}
           >

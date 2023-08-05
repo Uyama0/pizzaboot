@@ -52,12 +52,12 @@ function Header() {
       >
         <ul>
           <li>
-            <Link to="/menu" onClick={toggleMenu}>
-              About
+            <Link to="/home" onClick={toggleMenu}>
+              Home
             </Link>
           </li>
           <li>
-            <Link to="/menu" onClick={toggleMenu}>
+            <Link to="/about" onClick={toggleMenu}>
               About
             </Link>
           </li>

@@ -14,8 +14,9 @@ import pizza from "../img/pizza.png";
 export const pizzas = [
   {
     id: 1,
-    title: "Cheez",
-    description: "CHeez pizza",
+    title: "Lorem",
+    description:
+      "Home Lorem ipsum dolor sit amet consectetur, adipisicing elit.Quod doloribus maiores nisi id omnis rem! Soluta a necessitatibus,voluptates laborum itaque assumenda?",
     img: pizza,
     price: 6.99,
     options: [
@@ -36,7 +37,8 @@ export const pizzas = [
   {
     id: 2,
     title: "Cheez",
-    description: "CHeez pizza",
+    description:
+      "Home Lorem ipsum dolor sit amet consectetur, adipisicing elit.Quod doloribus maiores nisi id omnis rem! Soluta a necessitatibus,voluptates laborum itaque assumenda?",
     img: pizza,
     price: 6.99,
     options: [
@@ -57,7 +59,8 @@ export const pizzas = [
   {
     id: 3,
     title: "Cheez",
-    description: "CHeez pizza",
+    description:
+      "Home Lorem ipsum dolor sit amet consectetur, adipisicing elit.Quod doloribus maiores nisi id omnis rem! Soluta a necessitatibus,voluptates laborum itaque assumenda?",
     img: pizza,
     price: 6.99,
     options: [
