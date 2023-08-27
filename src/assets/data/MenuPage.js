@@ -14,6 +14,7 @@ import pizza from "../img/pizza.png";
 export const pizzas = [
   {
     id: 1,
+    category: "pizza1",
     title: "Lorem",
     description:
       "Home Lorem ipsum dolor sit amet consectetur, adipisicing elit.Quod doloribus maiores nisi id omnis rem! Soluta a necessitatibus,voluptates laborum itaque assumenda?",
@@ -36,6 +37,7 @@ export const pizzas = [
   },
   {
     id: 2,
+    category: "pizza1",
     title: "Cheez",
     description:
       "Home Lorem ipsum dolor sit amet consectetur, adipisicing elit.Quod doloribus maiores nisi id omnis rem! Soluta a necessitatibus,voluptates laborum itaque assumenda?",
@@ -58,6 +60,7 @@ export const pizzas = [
   },
   {
     id: 3,
+    category: "pizza2",
     title: "Cheez",
     description:
       "Home Lorem ipsum dolor sit amet consectetur, adipisicing elit.Quod doloribus maiores nisi id omnis rem! Soluta a necessitatibus,voluptates laborum itaque assumenda?",
@@ -80,6 +83,7 @@ export const pizzas = [
   },
   {
     id: 4,
+    category: "pizza2",
     title: "Cheez",
     description: "CHeez pizza",
     img: pizza,
@@ -101,6 +105,7 @@ export const pizzas = [
   },
   {
     id: 5,
+    category: "pizza3",
     title: "Cheez",
     description: "CHeez pizza",
     img: pizza,
@@ -122,6 +127,7 @@ export const pizzas = [
   },
   {
     id: 6,
+    category: "pizza3",
     title: "Cheez",
     description: "CHeez pizza",
     img: pizza,

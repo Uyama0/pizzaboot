@@ -1,23 +1,35 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { pizzas } from "../assets/data/MenuPage.js";
+import CategoriesList from "./CategoriesList.jsx";
 
 function MenuList() {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    if (selectedCategory === "all") {
+      setSearchResults(pizzas);
+    } else {
+      const filteredPizzas = pizzas.filter(
+        (pizza) => pizza.category === selectedCategory
+      );
+      setSearchResults(filteredPizzas);
+    }
+  }, [selectedCategory]);
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <div className="mx-auto max-w-6xl">
       {/* Categories */}
-      <div className="my-5">
-        <ul className="flex group gap-5 justify-center">
-          <li class="p-2 rounded-lg border-2 border-red-500">Cheez Pizza</li>
-          <li class="p-2 rounded-lg border-2 border-red-500">Pizza</li>
-          <li class="p-2 rounded-lg border-2 border-red-500">Pizza</li>
-          <li class="p-2 rounded-lg border-2 border-red-500">Pizza</li>
-        </ul>
-      </div>
+      <CategoriesList onSelectCategory={handleCategorySelect} />
       {/* Product list */}
       <div className="flex flex-wrap text-red-600 ">
-        {pizzas.map((item) => (
+        {searchResults.map((item) => (
           <Link
             to={`/home/${item.id}`}
             className="w-full h-[60vh] rounder-lg sm:w-1/2 lg:w-1/3 p-4 border border-red-200 "
@@ -32,6 +44,8 @@ function MenuList() {
                 ></img>
                 <div className="flex items-center justify-between font-bold">
                   <h1>{item.title}</h1>
+                </div>
+                <div className="flex">
                   <h1>${item.price}</h1>
                   <button className="text-white bg-red-500 p-2 rounded-md hover:bg-sky-700">
                     order
