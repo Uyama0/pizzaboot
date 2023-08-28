@@ -74,7 +74,18 @@ function Header() {
           cartIsOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="text-3xl w-full flex text-white justify-center p-4 underline uppercase"></div>
+        <div className="w-full text-white flex flex-col h-full">
+          <div className="text-2xl flex justify-center p-4 ">
+            Your purchases
+          </div>
+          <ul>
+            <li>Lorem do something here</li>
+          </ul>
+          <div className="flex-1"></div>
+          <div>
+            <p>Total price: </p>
+          </div>
+        </div>
       </div>
     </header>
   );
