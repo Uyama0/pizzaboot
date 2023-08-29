@@ -4,27 +4,15 @@ import { Link } from "react-router-dom";
 function ProductList({ searchResults }) {
   const [selectedSize, setSelectedSize] = useState("medium");
   const [selectedOption, setSelectedOption] = useState("traditional");
-  // const [buttonStyles, setButtonStyles] = useState({
-  //   small: false,
-  //   medium: true,
-  //   large: false,
-  // });
-  // const [buttonStyless, setButtonStyless] = useState({
-  //   traditional: true,
-  //   thick: false,
-  // });
-  const initialButtonStates = searchResults.map(() => ({
-    size: {
-      small: false,
-      medium: true,
-      large: false,
-    },
-    option: {
-      traditional: true,
-      thick: false,
-    },
-  }));
-  const [buttonStates, setButtonStates] = useState(initialButtonStates);
+  const [buttonStyles, setButtonStyles] = useState({
+    small: false,
+    medium: true,
+    large: false,
+  });
+  const [buttonStyless, setButtonStyless] = useState({
+    traditional: true,
+    thick: false,
+  });
 
   const handleSizeChange = (size) => {
     setSelectedSize(size);
