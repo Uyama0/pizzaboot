@@ -31,11 +31,13 @@ function Header() {
           </div>
           <div className="flex-1"></div>
           <div className="gap-6 inline-flex p-2 mr-4 md:mr-0">
-            <AiOutlineShoppingCart
-              size={24}
-              className="m-auto cursor-pointer"
-              onClick={cartToggle}
-            />
+            <Link to="cart">
+              <AiOutlineShoppingCart
+                size={24}
+                className="m-auto cursor-pointer"
+                onClick={cartToggle}
+              />
+            </Link>
             <GrMenu
               className="m-auto cursor-pointer md:hidden"
               size={24}
@@ -69,7 +71,7 @@ function Header() {
         </ul>
       </div>
 
-      <div
+      {/* <div
         className={`fixed h-full w-[60%] md:w-1/4 bg-slate-600 flex origin-right duration-500 end-0 ${
           cartIsOpen ? "translate-x-0" : "translate-x-full"
         }`}
@@ -86,7 +88,7 @@ function Header() {
             <p>Total price: </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </header>
   );
 }
