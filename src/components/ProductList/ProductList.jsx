@@ -1,42 +1,51 @@
 import React, { useState } from "react";
 
 function ProductList({ searchResults }) {
-  const [selectedSize, setSelectedSize] = useState("medium");
-  const [selectedOption, setSelectedOption] = useState("traditional");
-  const [buttonStyles, setButtonStyles] = useState({
-    small: false,
-    medium: true,
-    large: false,
-  });
-  const [buttonStyless, setButtonStyless] = useState({
-    traditional: true,
-    thick: false,
-  });
+  const [selectedSize, setSelectedSize] = useState({});
+  const [selectedOption, setSelectedOption] = useState({});
 
-  const handleSizeChange = (size) => {
-    setSelectedSize(size);
-
-    setButtonStyles({
-      small: size === "small",
-      medium: size === "medium",
-      large: size === "large",
-    });
+  const handleSizeChange = (itemId, size) => {
+    setSelectedSize({ ...selectedSize, [itemId]: size });
   };
 
-  const handleOptionChange = (option) => {
-    setSelectedOption(option);
+  const handleOptionChange = (itemId, option) => {
+    setSelectedOption({ ...selectedOption, [itemId]: option });
+  };
 
-    setButtonStyless({
-      traditional: option === "traditional",
-      thick: option === "thick",
+  useEffect(() => {
+    const defaultSize = "medium";
+    const defaultOption = "traditional";
+
+    const defaultSelectedSize = {};
+    const defaultSelectedOption = {};
+
+    searchResults.forEach((item) => {
+      defaultSelectedSize[item.id] = defaultSize;
+      defaultSelectedOption[item.id] = defaultOption;
     });
+
+    setSelectedSize(defaultSelectedSize);
+    setSelectedOption(defaultSelectedOption);
+  }, [searchResults]);
+
+  const calculateTotalPrice = (item) => {
+    const selectedSizeValue = selectedSize[item.id];
+    const selectedOptionValue = selectedOption[item.id];
+
+    const basePrice = item.prices[selectedSizeValue];
+    const optionPrice = item.options[selectedOptionValue];
+
+    if (basePrice && optionPrice) {
+      return basePrice + optionPrice;
+    }
+
+    return 0;
   };
 
   return (
     <div className="flex flex-wrap text-red-600">
       {searchResults.map((item) => (
         <div
-          // to={`/home/${item.id}`}
           className="w-full h-[60vh] rounded-xl sm:w-1/2 lg:w-1/3 p-4 border border-red-200 "
           key={item.id}
         >
@@ -56,25 +65,28 @@ function ProductList({ searchResults }) {
             <div className="flex flex-row justify-around gap-1 p-1">
               <button
                 className={`${
-                  buttonStyles.small ? "bg-black text-white" : ""
+                  selectedSize[item.id] === "small" ? "bg-black text-white" : ""
                 } w-1/3 py-2 rounded-md`}
-                onClick={() => handleSizeChange("small")}
+                onClick={() => handleSizeChange(item.id, "small")}
               >
                 Small
               </button>
               <button
                 className={`${
-                  buttonStyles.medium ? "bg-black text-white" : ""
+                  selectedSize[item.id] === "medium"
+                    ? "bg-black text-white"
+                    : ""
                 } w-1/3 py-2 rounded-md`}
-                onClick={() => handleSizeChange("medium")}
+                onClick={() => handleSizeChange(item.id, "medium")}
               >
                 Medium
               </button>
+
               <button
                 className={`${
-                  buttonStyles.large ? "bg-black text-white" : ""
+                  selectedSize[item.id] === "large" ? "bg-black text-white" : ""
                 } w-1/3 py-2 rounded-md`}
-                onClick={() => handleSizeChange("large")}
+                onClick={() => handleSizeChange(item.id, "large")}
               >
                 Large
               </button>
@@ -82,17 +94,19 @@ function ProductList({ searchResults }) {
             <div className="flex-row flex justify-around gap-1 p-1">
               <button
                 className={`${
-                  buttonStyless.traditional ? "bg-black" : ""
+                  selectedOption[item.id] === "traditional" ? "bg-black" : ""
                 } w-1/2  rounded-md`}
-                onClick={() => handleOptionChange("traditional")}
+                onClick={() => handleOptionChange(item.id, "traditional")}
               >
                 Traditional
               </button>
               <button
                 className={`${
-                  buttonStyless.thick ? "bg-black text-white" : ""
+                  selectedOption[item.id] === "thick"
+                    ? "bg-black text-white"
+                    : ""
                 } w-1/2 py-2 rounded-md`}
-                onClick={() => handleOptionChange("thick")}
+                onClick={() => handleOptionChange(item.id, "thick")}
               >
                 Thick
               </button>
@@ -100,7 +114,7 @@ function ProductList({ searchResults }) {
           </div>
           <div className="flex justify-between px-5">
             <h1 className="flex items-center">
-              Price: ${item.prices[selectedSize] + item.options[selectedOption]}
+              Price: ${calculateTotalPrice(item).toFixed(2)}
             </h1>
             <button
               onClick={() => addToCart(item, selectedSize, selectedOption)}
