@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../../redux/reducers/cartSlice";
 
 function ProductList({ searchResults }) {
   const [selectedSize, setSelectedSize] = useState({});
   const [selectedOption, setSelectedOption] = useState({});
+
+  const dispatch = useDispatch();
 
   const handleSizeChange = (itemId, size) => {
     setSelectedSize({ ...selectedSize, [itemId]: size });
@@ -40,6 +45,20 @@ function ProductList({ searchResults }) {
     }
 
     return 0;
+  };
+
+  const handleAddToCart = (item) => {
+    const selectedSizeValue = selectedSize[item.id];
+    const selectedOptionValue = selectedOption[item.id];
+
+    const itemToAdd = {
+      ...item,
+      selectedSize: selectedSizeValue,
+      selectedOption: selectedOptionValue,
+      totalPrice: calculateTotalPrice(item),
+    };
+
+    dispatch(addToCart(itemToAdd));
   };
 
   return (
@@ -117,7 +136,7 @@ function ProductList({ searchResults }) {
               Price: ${calculateTotalPrice(item).toFixed(2)}
             </h1>
             <button
-              onClick={() => addToCart(item, selectedSize, selectedOption)}
+              onClick={() => handleAddToCart(item)}
               className="text-white bg-red-500 p-2 rounded-md hover:bg-sky-700"
             >
               Add to cart

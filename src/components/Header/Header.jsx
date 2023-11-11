@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { GrMenu, GrClose } from "react-icons/gr";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -18,6 +19,8 @@ function Header() {
     setOpen(false);
   };
 
+  const cartItems = useSelector((state) => state.cart.items);
+
   return (
     <header className="w-full bg-slate-200 sticky top-0">
       <div className="mx-auto max-w-6xl ">
@@ -31,7 +34,8 @@ function Header() {
           </div>
           <div className="flex-1"></div>
           <div className="gap-6 inline-flex p-2 mr-4 md:mr-0">
-            <Link to="cart">
+            <Link to="cart" className="flex gap-2">
+              <div>{cartItems.length}</div>
               <AiOutlineShoppingCart
                 size={24}
                 className="m-auto cursor-pointer"
