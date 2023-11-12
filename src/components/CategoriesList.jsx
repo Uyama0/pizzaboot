@@ -1,5 +1,5 @@
 function CategoriesList({ onSelectCategory }) {
-  const categories = ["all", "pizza1", "pizza2", "pizza3"];
+  const categories = ["all", "category1", "category2", "category3"];
   return (
     <div className="my-5 ">
       <ul className="flex justify-center ">
