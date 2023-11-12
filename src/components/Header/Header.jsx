@@ -22,7 +22,7 @@ function Header() {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (
-    <header className="w-full bg-slate-200 sticky top-0">
+    <header className="w-full bg-opacity-50 backdrop-blur-md border-b border-gray sticky top-0 px-[2rem] py-2">
       <div className="mx-auto max-w-6xl ">
         <nav className="flex items-center gap-3 text-base">
           <h2 className="ml-4 md:ml-0 font-semibold text-lg">Cabo</h2>
@@ -52,7 +52,7 @@ function Header() {
       </div>
 
       <div
-        className={`fixed w-full h-full flex justify-center items-center text-[4rem] tracking-wide bg-gray-700 text-white overflow-hidden origin-left duration-500 ${
+        className={`fixed w-full h-full flex justify-center items-center text-[4rem] tracking-wide bg-gray-700 text-white  bg-black overflow-hidden origin-left duration-500 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

@@ -1,17 +1,19 @@
 function CategoriesList({ onSelectCategory }) {
-  const categories = ["all", "pizza1", "pizza2", "pizza3"]; // и другие категории
+  const categories = ["all", "pizza1", "pizza2", "pizza3"];
   return (
-    <div className="my-5">
-      <ul className="flex group gap-5 justify-center">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => onSelectCategory(category)}
-            className="p-2 rounded-lg border-2 border-red-500"
-          >
-            {category}
-          </button>
-        ))}
+    <div className="my-5 ">
+      <ul className="flex justify-center ">
+        <div className="border-2 border-gray rounded-lg ">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => onSelectCategory(category)}
+              className="py-3 px-6 hover:bg-gray"
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </ul>
     </div>
   );
