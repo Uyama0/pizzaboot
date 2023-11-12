@@ -1,4 +1,4 @@
-import pizza from "../img/pizza.png";
+import pizza from "../img/product.jpg";
 
 export const pizzas = [
   {

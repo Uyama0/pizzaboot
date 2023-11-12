@@ -62,25 +62,25 @@ function ProductList({ searchResults }) {
   };
 
   return (
-    <div className="flex flex-wrap text-red-600">
+    <div className="flex flex-wrap text-mutedgray ">
       {searchResults.map((item) => (
         <div
-          className="w-full h-[60vh] rounded-xl sm:w-1/2 lg:w-1/3 p-4 border border-red-200 "
+          className="w-full h-[60vh] rounded-lg sm:w-1/2 lg:w-1/3 p-4 border-2 border-gray transform overflow-hidden"
           key={item.id}
         >
           {item.img && (
-            <div className="h-[60%] relative -z-10">
+            <div>
               <img
                 src={item.img}
                 alt=""
-                className="object-contain h-full w-full"
+                className="object-cover object-centerw-full"
               ></img>
               <h1 className="flex justify-center font-bold text-xl w-full">
                 {item.title}
               </h1>
             </div>
           )}
-          <div className="w-full rounded-xl flex-col text-lg bg-gray-100">
+          {/* <div className="w-full rounded-xl flex-col text-lg bg-gray-100">
             <div className="flex flex-row justify-around gap-1 p-1">
               <button
                 className={`${
@@ -141,7 +141,7 @@ function ProductList({ searchResults }) {
             >
               Add to cart
             </button>
-          </div>
+          </div> */}
         </div>
       ))}
     </div>

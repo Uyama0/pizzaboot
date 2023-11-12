@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { pizzas } from "../assets/data/MenuPage.js";
+import { pizzas } from "../assets/data/listOfProducts.js";
 import CategoriesList from "./CategoriesList.jsx";
 import ProductList from "./ProductList/ProductList.jsx";
 
@@ -24,7 +24,7 @@ function MenuList() {
   };
 
   return (
-    <div className="mx-auto max-w-6xl ">
+    <div className="mx-auto max-w-6xl">
       <CategoriesList onSelectCategory={handleCategorySelect} />
       <ProductList searchResults={searchResults} />
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import { pizzas } from "../assets/data/MenuPage.js";
+import { pizzas } from "../assets/data/listOfProducts.js";
 
 function SingleProduct() {
   const { id } = useParams();
