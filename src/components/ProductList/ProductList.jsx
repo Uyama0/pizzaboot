@@ -62,10 +62,10 @@ function ProductList({ searchResults }) {
   };
 
   return (
-    <div className="flex flex-wrap text-mutedgray ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {searchResults.map((item) => (
         <div
-          className="w-full h-[60vh] rounded-lg sm:w-1/2 lg:w-1/3 p-4 border-2 border-gray transform overflow-hidden"
+          className=" rounded-lg border-2 border-gray transform overflow-hidden"
           key={item.id}
         >
           {item.img && (
@@ -73,19 +73,17 @@ function ProductList({ searchResults }) {
               <img
                 src={item.img}
                 alt=""
-                className="object-cover object-centerw-full"
+                className="object-cover object-center-full"
               ></img>
-              <h1 className="flex justify-center font-bold text-xl w-full">
-                {item.title}
-              </h1>
+              <h1 className="flex justify-center text-xl my-2">{item.title}</h1>
             </div>
           )}
-          {/* <div className="w-full rounded-xl flex-col text-lg bg-gray-100">
-            <div className="flex flex-row justify-around gap-1 p-1">
+          <div className="rounded-lg bg-gray flex-col m-2">
+            <div className="flex justify-around gap-1 p-1">
               <button
                 className={`${
                   selectedSize[item.id] === "small" ? "bg-black text-white" : ""
-                } w-1/3 py-2 rounded-md`}
+                } w-1/3 py-2 rounded-lg`}
                 onClick={() => handleSizeChange(item.id, "small")}
               >
                 Small
@@ -95,16 +93,15 @@ function ProductList({ searchResults }) {
                   selectedSize[item.id] === "medium"
                     ? "bg-black text-white"
                     : ""
-                } w-1/3 py-2 rounded-md`}
+                } w-1/3 py-2 rounded-lg`}
                 onClick={() => handleSizeChange(item.id, "medium")}
               >
                 Medium
               </button>
-
               <button
                 className={`${
                   selectedSize[item.id] === "large" ? "bg-black text-white" : ""
-                } w-1/3 py-2 rounded-md`}
+                } w-1/3 py-2 rounded-lg`}
                 onClick={() => handleSizeChange(item.id, "large")}
               >
                 Large
@@ -113,8 +110,8 @@ function ProductList({ searchResults }) {
             <div className="flex-row flex justify-around gap-1 p-1">
               <button
                 className={`${
-                  selectedOption[item.id] === "traditional" ? "bg-black" : ""
-                } w-1/2  rounded-md`}
+                  selectedOption[item.id] === "traditional" ? "bg-black " : ""
+                } w-1/2  rounded-lg`}
                 onClick={() => handleOptionChange(item.id, "traditional")}
               >
                 Traditional
@@ -124,24 +121,24 @@ function ProductList({ searchResults }) {
                   selectedOption[item.id] === "thick"
                     ? "bg-black text-white"
                     : ""
-                } w-1/2 py-2 rounded-md`}
+                } w-1/2 py-2 rounded-lg`}
                 onClick={() => handleOptionChange(item.id, "thick")}
               >
                 Thick
               </button>
             </div>
           </div>
-          <div className="flex justify-between px-5">
+          <div className="flex justify-between p-2">
             <h1 className="flex items-center">
               Price: ${calculateTotalPrice(item).toFixed(2)}
             </h1>
             <button
               onClick={() => handleAddToCart(item)}
-              className="text-white bg-red-500 p-2 rounded-md hover:bg-sky-700"
+              className="text-black bg-white p-2 rounded-lg hover:bg-mutedwhite"
             >
               Add to cart
             </button>
-          </div> */}
+          </div>
         </div>
       ))}
     </div>
