@@ -22,7 +22,6 @@ function Header() {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (
-    // <header className="w-full bg-opacity-50 backdrop-blur-md border-b border-gray sticky top-0 py-2 z-10">
     <header className="w-full sticky top-0 z-10">
       <div
         className={`bg-gray-700 py-2 backdrop-blur-md ${

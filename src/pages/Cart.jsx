@@ -9,27 +9,41 @@ function Cart() {
   console.log("Содержимое корзины:", cartItems);
 
   return (
-    <div className="flex flex-col gap-3 border-2 m-3">
-      <h1 className="text-center text-2xl">Your cart</h1>
-      {cartItems.map((item, index) => (
-        <div key={index} className="flex w-full border-2 h-20">
-          <div className="flex justify-between">
-            {item.img && (
-              <div>
-                <img src={item.img} alt="pizza here" className="h-full" />
+    <div className="mx-auto max-w-6xl">
+      <h1 className="text-2xl my-6">Your cart</h1>
+      <div className="grid grid-cols-3 gap-4">
+        <div className="col-span-2 border-gray border-2 rounded-lg">
+          {cartItems &&
+            cartItems.map((item, index) => (
+              <div className="flex p-3 justify-between" key={index}>
+                <img
+                  src={item.img}
+                  alt="product"
+                  className="object-cover max-h-20 flex"
+                />
+                <div className="flex flex-col justify-around">
+                  <p>{item.title}</p>
+                  <p>{item.category}</p>
+                </div>
+                <button onClick={() => dispatch(removeFromCart(item.id))}>
+                  Delete
+                </button>
+                <h1>{item.totalPrice}</h1>
               </div>
-            )}
-            <section className="flex flex-col justify-center">
-              <h1>{item.title}</h1>
-              <p>{item.category}</p>
-            </section>
-            <div className="flex items-center">{item.totalPrice}</div>
-            <button onClick={() => dispatch(removeFromCart(item.id))}>
-              Delete
-            </button>
+            ))}
+        </div>
+        <div className="border-gray border-2 rounded-lg flex flex-col p-2 gap-2">
+          <div className="border-white p-2 border-2 rounded-lg">вф</div>
+          <div className="border-white p-2 border-2 rounded-lg">
+            <h1>Your order</h1>
+            <p></p>
+            <div className="flex justify-between">
+              <h1>Total price</h1>
+              <p></p>
+            </div>
           </div>
         </div>
-      ))}
+      </div>
     </div>
   );
 }
