@@ -14,7 +14,7 @@ function Layout() {
         <div>
           <Routers />
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </Provider>
     </>
   );
