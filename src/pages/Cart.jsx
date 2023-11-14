@@ -2,11 +2,20 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { removeFromCart } from "../redux/reducers/cartSlice.js";
+import { current } from "@reduxjs/toolkit";
 
 function Cart() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+
+  // const calculateBillTotalPrice = (cartItems) => {
+  //   let billTotalPrice = cartItems.reduce(
+  //     (prevItem, currentItem) => prevItem.totalPrice + currentItem.totalPrice
+  //   );
+  //   return billTotalPrice;
+  // };
   console.log("Содержимое корзины:", cartItems);
+  // console.log("Содержимое корзины:", billTotalPrice);
 
   return (
     <div className="mx-auto max-w-6xl">
@@ -14,21 +23,29 @@ function Cart() {
       <div className="grid grid-cols-3 gap-4">
         <div className="col-span-2 border-gray border-2 rounded-lg">
           {cartItems &&
-            cartItems.map((item, index) => (
-              <div className="flex p-3 justify-between" key={index}>
+            cartItems.map((item) => (
+              <div
+                className="flex text-mutedwhite p-3 justify-between"
+                key={item.id}
+              >
                 <img
                   src={item.img}
                   alt="product"
-                  className="object-cover max-h-20 flex"
+                  className="object-cover max-h-20 flex rounded-lg"
                 />
-                <div className="flex flex-col justify-around">
-                  <p>{item.title}</p>
+                <div className="flex flex-col flex-grow mx-4 justify-around">
+                  <h1 className="text-white">{item.title}</h1>
                   <p>{item.category}</p>
                 </div>
-                <button onClick={() => dispatch(removeFromCart(item.id))}>
+                <button
+                  className="underline"
+                  onClick={() => dispatch(removeFromCart(item.id))}
+                >
                   Delete
                 </button>
-                <h1>{item.totalPrice}</h1>
+                <h1 className="flex justify-center ml-4 items-center">
+                  {item.totalPrice}
+                </h1>
               </div>
             ))}
         </div>

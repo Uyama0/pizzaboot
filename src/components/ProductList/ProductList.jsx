@@ -37,7 +37,7 @@ function ProductList({ searchResults }) {
     const selectedSizeValue = selectedSize[item.id];
     const selectedOptionValue = selectedOption[item.id];
 
-    const basePrice = item.prices[selectedSizeValue];
+    const basePrice = item.sizes[selectedSizeValue];
     const optionPrice = item.options[selectedOptionValue];
 
     if (basePrice && optionPrice) {

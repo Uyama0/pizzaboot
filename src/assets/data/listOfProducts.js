@@ -7,7 +7,7 @@ export const pizzas = [
     title: "Schezwan Margherita",
     description: "description",
     img: pizza,
-    prices: {
+    sizes: {
       small: 8.99,
       medium: 10.99,
       large: 12.99,
@@ -23,7 +23,7 @@ export const pizzas = [
     title: "Cheezy Mushroom Magic",
     description: "description",
     img: pizza,
-    prices: {
+    sizes: {
       small: 8.99,
       medium: 10.99,
       large: 12.99,
@@ -39,7 +39,7 @@ export const pizzas = [
     title: "Ultimate Tandoori Veggie",
     description: "description",
     img: pizza,
-    prices: {
+    sizes: {
       small: 8.99,
       medium: 10.99,
       large: 12.99,
@@ -55,7 +55,7 @@ export const pizzas = [
     title: "Tandoori Paneer",
     description: "description",
     img: pizza,
-    prices: {
+    sizes: {
       small: 8.99,
       medium: 10.99,
       large: 12.99,
@@ -71,7 +71,7 @@ export const pizzas = [
     title: "Margherita",
     description: "description",
     img: pizza,
-    prices: {
+    sizes: {
       small: 8.99,
       medium: 10.99,
       large: 12.99,
@@ -83,11 +83,11 @@ export const pizzas = [
   },
   {
     id: 6,
-    category: "category2",
+    category: "category1",
     title: "Mexican Fiesta",
     description: "description",
     img: pizza,
-    prices: {
+    sizes: {
       small: 8.99,
       medium: 10.99,
       large: 12.99,
@@ -103,7 +103,7 @@ export const pizzas = [
     title: "Veggie Supreme",
     description: "description",
     img: pizza,
-    prices: {
+    sizes: {
       small: 8.99,
       medium: 10.99,
       large: 12.99,
@@ -119,7 +119,7 @@ export const pizzas = [
     title: "Margherita",
     description: "description",
     img: pizza,
-    prices: {
+    sizes: {
       small: 8.99,
       medium: 10.99,
       large: 12.99,
@@ -131,11 +131,11 @@ export const pizzas = [
   },
   {
     id: 9,
-    category: "category3",
+    category: "category2",
     title: "Schezwan Margherita",
     description: "description",
     img: pizza,
-    prices: {
+    sizes: {
       small: 8.99,
       medium: 10.99,
       large: 12.99,
