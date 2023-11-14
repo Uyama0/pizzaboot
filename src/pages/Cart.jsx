@@ -25,7 +25,7 @@ function Cart() {
           {cartItems &&
             cartItems.map((item) => (
               <div
-                className="flex text-mutedwhite p-3 justify-between"
+                className="flex text-mutedwhite p-3 justify-between "
                 key={item.id}
               >
                 <img
@@ -49,10 +49,16 @@ function Cart() {
               </div>
             ))}
         </div>
-        <div className="border-gray border-2 rounded-lg flex flex-col p-2 gap-2">
-          <div className="border-white p-2 border-2 rounded-lg">вф</div>
+        <div className="border-gray border-2 rounded-lg flex flex-col p-2 gap-2 relative max-h-96">
           <div className="border-white p-2 border-2 rounded-lg">
-            <h1>Your order</h1>
+            <div className="flex justify-between">
+              <h1 className="font-bold">Order</h1>
+              <button className="text-mutedwhite">change</button>
+            </div>
+            <p className="text-mutedwhite">current nowhere</p>
+          </div>
+          <div className="border-white p-2 border-2 rounded-lg flex-1">
+            <h1 className="font-bold">Your order</h1>
             <p></p>
             <div className="flex justify-between">
               <h1>Total price</h1>
