@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Cart from "../pages/Cart";
 import SingleProduct from "../pages/SingleProduct";
+import NotFound from "../pages/NotFound";
 
 function Routers() {
   return (
@@ -14,7 +15,7 @@ function Routers() {
       <Route path="/about" element={<About />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/home/:id" element={<SingleProduct />} />
-      <Route path="*" element={<Home />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
