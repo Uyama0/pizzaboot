@@ -65,7 +65,7 @@ function ProductList({ searchResults }) {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {searchResults.map((item) => (
         <div
-          className=" rounded-lg border-2 border-gray transform overflow-hidden"
+          className=" rounded-lg border-2 border-gray mx-2 md:mx-0 transform overflow-hidden"
           key={item.id}
         >
           {item.img && (

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { GrMenu, GrClose } from "react-icons/gr";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function Header() {
@@ -47,8 +47,7 @@ function Header() {
                   onClick={cartToggle}
                 />
               </Link>
-              <GrMenu
-                color="white"
+              <GiHamburgerMenu
                 className="m-auto cursor-pointer md:hidden"
                 size={24}
                 onClick={toggleMenu}
