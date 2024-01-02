@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { removeFromCart } from "../redux/reducers/cartSlice.js";
-import { current } from "@reduxjs/toolkit";
 
 function Cart() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+  const [storedLocation, changeLocation] = useState("plsssss");
+
+  function handeOnLocationChange(storedLocation) {
+    if (!storedLocation) {
+      console.log(2);
+    }
+    console.log(changeLocation);
+
+    return storedLocation;
+  }
 
   const total = cartItems.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.totalPrice;
   }, 0);
 
-  console.log("Содержимое корзины:", cartItems);
-  console.log("Содержимое корзины:", total);
+  const roundedTotal = total.toFixed(2);
 
   return (
     <div className="mx-auto max-w-6xl">
@@ -26,7 +34,7 @@ function Cart() {
           {cartItems && cartItems.length > 0 ? (
             cartItems.map((item) => (
               <div
-                className="flex text-mutedwhite p-3 justify-between "
+                className="flex text-mutedwhite  p-3 justify-between "
                 key={item.id}
               >
                 <img
@@ -63,19 +71,27 @@ function Cart() {
         <div className="border-gray border-2 rounded-lg flex flex-col p-2 gap-2 max-h-96 ">
           <div className="border-white p-2 border-2 rounded-lg">
             <div className="flex justify-between">
-              <h1 className="font-bold">Order</h1>
-              <button className="text-mutedwhite">change</button>
+              <h1 className="font-bold">Location</h1>
+              <button
+                onClick={handeOnLocationChange}
+                className="text-mutedwhite underline underline-offset-2"
+              >
+                change
+              </button>
             </div>
-            <p className="text-mutedwhite">current nowhere</p>
+            <p className="text-mutedwhite">{storedLocation}</p>
           </div>
           <div className="border-white p-2 border-2 rounded-lg h-96 flex flex-col">
             <h1 className="font-bold flex-1">Your order</h1>
             <p></p>
             <div className="flex justify-between">
               <h1>{`Total price ->`}</h1>
-              <p>wdq</p>
+              <p>{roundedTotal}</p>
             </div>
           </div>
+          <button className="border-white p-2 flex justify-center border-2 rounded-lg">
+            <h1 className="text-mutedwhite font-bold text-lg">Pay</h1>
+          </button>
         </div>
       </div>
     </div>
