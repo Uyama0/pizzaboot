@@ -1,8 +1,65 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+const API_KEY = import.meta.env.VITE_YANDEX_API_KEY;
 
 function About() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSuggestionClick = (suggestionText) => {
+    setSearchTerm(suggestionText);
+    setSuggestions([]);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `https://suggest-maps.yandex.ru/v1/suggest?apikey=${API_KEY}&text=${searchTerm}`
+        );
+        const data = await response.json();
+        setSuggestions(data.results);
+      } catch (error) {
+        console.error("Error fetching suggestions:", error);
+      }
+    };
+
+    if (searchTerm.trim() !== "") {
+      fetchData();
+    } else {
+      setSuggestions([]);
+    }
+  }, [searchTerm]);
+
   return (
     <div className="flex flex-col w-full bg-black md:flex-row justify-center px-5">
+      <div>
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleInputChange}
+          placeholder="Введите место..."
+          className="text-black"
+        />
+        {suggestions && suggestions.length > 0 ? (
+          <ul>
+            {suggestions.map((suggestion) => (
+              <li
+                key={suggestion.title.text}
+                onClick={() => handleSuggestionClick(suggestion.title.text)}
+              >
+                <button>{suggestion.title.text}</button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No suggestions available</p>
+        )}
+      </div>
       <div className="lg:w-1/2 text-center text-white font-bold flex flex-col gap-3">
         <div>
           <h1 className="uppercase text-4xl my-5">about us</h1>

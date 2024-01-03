@@ -14,8 +14,11 @@ function Cart() {
       console.log(2);
     }
     console.log(changeLocation);
-
     return storedLocation;
+  }
+
+  function handlePayment() {
+    alert("Maybe later :)");
   }
 
   const total = cartItems.reduce((accumulator, currentValue) => {
@@ -89,7 +92,10 @@ function Cart() {
               <p>{roundedTotal}</p>
             </div>
           </div>
-          <button className="border-white p-2 flex justify-center border-2 rounded-lg">
+          <button
+            className="border-white p-2 flex justify-center border-2 rounded-lg"
+            onClick={handlePayment}
+          >
             <h1 className="text-mutedwhite font-bold text-lg">Pay</h1>
           </button>
         </div>
