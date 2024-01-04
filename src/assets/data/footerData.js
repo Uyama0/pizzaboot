@@ -23,7 +23,7 @@ export const footerData = [
     ],
   },
   {
-    title: "Cliens",
+    title: "Clients",
     links: [
       { label: "Promotions", url: "*" },
       { label: "Bonus", url: "*" },
