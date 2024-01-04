@@ -4,14 +4,28 @@ import { fetchSuggestions } from "../api/yandexSuggestions";
 const useInputSuggestionApi = (initialSearchTerm) => {
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
   const [suggestions, setSuggestions] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
+    setIsEditing(true);
   };
 
   const handleSuggestionClick = (suggestionText) => {
     setSearchTerm(suggestionText);
+    setIsEditing(false);
     setSuggestions([]);
+  };
+
+  const handleInputBlur = () => {
+    setIsEditing(false);
+  };
+
+  const handleKeyUp = (e) => {
+    if (e.key === "Enter") {
+      setIsEditing(false);
+    }
   };
 
   useEffect(() => {
@@ -30,8 +44,12 @@ const useInputSuggestionApi = (initialSearchTerm) => {
   return {
     searchTerm,
     suggestions,
+    isEditing,
+    inputValue,
     handleInputChange,
     handleSuggestionClick,
+    handleInputBlur,
+    handleKeyUp,
   };
 };
 
