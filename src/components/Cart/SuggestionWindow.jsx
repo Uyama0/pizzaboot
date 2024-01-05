@@ -71,3 +71,4 @@ const SuggestionWindow = ({ setModalOpen }) => {
 };
 
 export default SuggestionWindow;
+

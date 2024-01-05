@@ -29,16 +29,16 @@ function Header() {
         }`}
       >
         <div className="mx-auto max-w-6xl relative">
-          <nav className="flex items-center gap-3 text-base">
+          <nav className="flex items-center text-base justify-between">
             <h2 className="ml-4 md:ml-0 font-semibold text-lg">Pizza boot</h2>
-            <div className="flex-1"></div>
+            {/* <div className="flex-1"></div> */}
             <div className="gap-6 p-2 hidden md:flex ">
               <Link to="/home">Home</Link>
               <Link to="/about">About</Link>
-              <Link to="/home">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </div>
-            <div className="flex-1"></div>
-            <div className="gap-6 inline-flex p-2 mr-4 md:mr-0">
+            {/* <div className="flex-1"></div> */}
+            <div className="gap-6 inline-flex p-2 mr-4 md:mr-0 md:w-[90px]">
               <Link to="cart" className="flex gap-2">
                 <div>{cartItems.length}</div>
                 <AiOutlineShoppingCart
@@ -74,31 +74,12 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/menu" onClick={toggleMenu}>
+            <Link to="/contact" onClick={toggleMenu}>
               Contact
             </Link>
           </li>
         </ul>
       </div>
-
-      {/* <div
-      className={`fixed h-full w-[60%] md:w-1/4 bg-slate-600 flex origin-right duration-500 end-0 ${
-        cartIsOpen ? "translate-x-0" : "translate-x-full"
-      }`}
-    >
-      <div className="w-full text-white flex flex-col h-full">
-        <div className="text-2xl flex justify-center p-4 ">
-          Your purchases
-        </div>
-        <ul>
-          <li>Lorem do something here</li>
-        </ul>
-        <div className="flex-1"></div>
-        <div>
-          <p>Total price: </p>
-        </div>
-      </div>
-    </div> */}
     </header>
   );
 }
