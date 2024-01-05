@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import SuggestionWindow from "../components/Cart/SuggestionWindow.jsx";
 import { removeFromCart } from "../redux/reducers/cartSlice.js";
+import { selectChoosenLocation } from "../redux/reducers/locationSlice.js";
 
 function Cart() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setModalOpen(!isModalOpen);
+  };
+
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
-  const [storedLocation, changeLocation] = useState("plsssss");
-
-  function handeOnLocationChange(storedLocation) {
-    if (!storedLocation) {
-      console.log(2);
-    }
-    console.log(changeLocation);
-    return storedLocation;
-  }
+  const choosenLocation = useSelector(selectChoosenLocation);
+  console.log(choosenLocation);
 
   function handlePayment() {
     alert("Maybe later :)");
@@ -76,17 +77,22 @@ function Cart() {
             <div className="flex justify-between">
               <h1 className="font-bold">Location</h1>
               <button
-                onClick={handeOnLocationChange}
                 className="text-mutedwhite underline underline-offset-2"
+                onClick={handleButtonClick}
               >
                 change
               </button>
+              {isModalOpen && (
+                <SuggestionWindow
+                  setModalOpen={setModalOpen}
+                  choosenLocation={choosenLocation}
+                />
+              )}
             </div>
-            <p className="text-mutedwhite">{storedLocation}</p>
+            <p className="text-mutedgray">{choosenLocation}</p>
           </div>
           <div className="border-white p-2 border-2 rounded-lg h-96 flex flex-col">
             <h1 className="font-bold flex-1">Your order</h1>
-            <p></p>
             <div className="flex justify-between">
               <h1>{`Total price ->`}</h1>
               <p>{roundedTotal}</p>

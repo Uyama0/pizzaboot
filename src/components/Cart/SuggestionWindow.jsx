@@ -1,14 +1,23 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setChoosenLocation,
+  selectChoosenLocation,
+} from "../../redux/reducers/locationSlice";
 
 import useInputSuggestionApi from "../../hooks/useInputSuggestionApi";
 
-const SuggestionWindow = () => {
+const SuggestionWindow = ({ setModalOpen }) => {
   const { searchTerm, suggestions, handleInputChange, handleSuggestionClick } =
     useInputSuggestionApi("");
+  const dispatch = useDispatch();
 
   const isSearchTermValid = searchTerm.match(/\d+$/);
 
-  const handleChooseClick = () => {};
+  const handleChooseClick = () => {
+    setModalOpen(false);
+    dispatch(setChoosenLocation(searchTerm));
+  };
 
   return (
     <div className="h-screen w-screen fixed top-0 left-0 bg-black bg-opacity-80 z-10 flex justify-center items-center">
