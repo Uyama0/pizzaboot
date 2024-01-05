@@ -30,14 +30,12 @@ function Header() {
       >
         <div className="mx-auto max-w-6xl relative">
           <nav className="flex items-center text-base justify-between">
-            <h2 className="ml-4 md:ml-0 font-semibold text-lg">Pizza boot</h2>
-            {/* <div className="flex-1"></div> */}
+            <h2 className="ml-4 md:ml-0 font-semibold text-lg">Pizzaboot</h2>
             <div className="gap-6 p-2 hidden md:flex ">
               <Link to="/home">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/contact">Contact</Link>
             </div>
-            {/* <div className="flex-1"></div> */}
             <div className="gap-6 inline-flex p-2 mr-4 md:mr-0 md:w-[90px]">
               <Link to="cart" className="flex gap-2">
                 <div>{cartItems.length}</div>

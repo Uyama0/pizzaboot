@@ -12,7 +12,7 @@ function Footer() {
   return (
     <footer className="mx-auto max-w-6xl my-10">
       <h1 className="uppercase text-center font-bold tracking-wide text-xl mb-4 md:text-left">
-        Pizza boot
+        Pizzaboot
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
         {footerData.map((column, columnIndex) => (
