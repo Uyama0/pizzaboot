@@ -11,8 +11,7 @@ import Contact from "../pages/Contact";
 function Routers() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/contact" element={<Contact />} />
