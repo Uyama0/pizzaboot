@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  outline: 1px solid red;
-} */
-
 body {
   @apply bg-black text-white border-gray font-Inter;
 }

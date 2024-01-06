@@ -32,7 +32,7 @@ function Header() {
           <nav className="flex items-center text-base justify-between">
             <h2 className="ml-4 md:ml-0 font-semibold text-lg">Pizzaboot</h2>
             <div className="gap-6 p-2 hidden md:flex ">
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/contact">Contact</Link>
             </div>
@@ -62,7 +62,7 @@ function Header() {
       >
         <ul>
           <li>
-            <Link to="/home" onClick={toggleMenu}>
+            <Link to="/" onClick={toggleMenu}>
               Home
             </Link>
           </li>
