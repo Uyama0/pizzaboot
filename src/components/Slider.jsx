@@ -17,8 +17,12 @@ function Slider() {
   return (
     <div className="flex flex-col h-[calc(100vh-40px)] lg:h-[calc(100vh-40px)] lg:flex-row ">
       <div className="h-1/2 lg:h-auto lg:w-1/2 flex items-center bg-black gap-6 justify-center font-bold flex-col text-white">
-        <h1 className="text-5xl p-4 uppercase">text here</h1>
-        <button className="bg-white text-black p-4 px-10">BUTTON HERE</button>
+        <h1 className="text-5xl p-4 uppercase text-center">
+          Explore <p>Products</p>
+        </h1>
+        <a href="#productList"><button className="bg-white text-black p-4 px-10 uppercase">
+          Get in touch
+        </button></a>
       </div>
       <div className="w-full h-1/2 lg:w-1/2 relative lg:h-full -z-10">
         <img
