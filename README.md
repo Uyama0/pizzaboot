@@ -2,6 +2,8 @@
 
 Demo is available at: [https://pizza-boot.vercel.app/](https://pizza-boot.vercel.app/).
 
+![Homepage](./public/homepageREADME.png)
+
 ## Stack
 
 - [React](https://react.dev/)
