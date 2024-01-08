@@ -17,7 +17,7 @@ Demo is available at: [https://pizza-boot.vercel.app/](https://pizza-boot.vercel
 npm install
 ```
 
-Note: for better experience, you need to use [Yandex Maps API][1]. Here, you need to obtain the Geosuggest API, but you can try a different one as it's free to use.
+**Note:** for better experience, you need to use [Yandex Maps API][1]. Here, you need to obtain the Geosuggest API, but you can try a different one as it's free to use.
 
 ### Setup:
 
