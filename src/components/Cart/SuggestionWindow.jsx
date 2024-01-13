@@ -1,9 +1,6 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  setChoosenLocation,
-  selectChoosenLocation,
-} from "../../redux/reducers/locationSlice";
+import { useDispatch } from "react-redux";
+import { setChoosenLocation } from "../../redux/reducers/locationSlice";
 
 import useInputSuggestionApi from "../../hooks/useInputSuggestionApi";
 
@@ -71,4 +68,3 @@ const SuggestionWindow = ({ setModalOpen }) => {
 };
 
 export default SuggestionWindow;
-

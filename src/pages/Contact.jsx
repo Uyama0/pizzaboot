@@ -15,7 +15,7 @@ const Contact = () => {
 
   return (
     <section className="relative max-w-lg mx-auto bg-black border-gray border-2 rounded-lg p-4">
-      <h1 className="text-4xl text-center">Drop us a line</h1>
+      <h1 className="text-4xl md:text-center py-2">Drop us a line</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col space-y-4"
